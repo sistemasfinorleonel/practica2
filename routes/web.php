@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TipoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use App\Http\Livewire\Tipo\TipoIndex;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,3 +21,4 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+Route::get('tipo',[TipoController::class,'mostrar']);
